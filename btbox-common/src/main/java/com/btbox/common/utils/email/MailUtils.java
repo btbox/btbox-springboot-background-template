@@ -8,10 +8,12 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.mail.Mail;
 import cn.hutool.extra.mail.MailAccount;
 import cn.hutool.extra.mail.UserPassAuthenticator;
+import com.btbox.common.exception.UtilException;
 import com.btbox.common.utils.StringUtils;
 import com.btbox.common.utils.spring.SpringUtils;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 
 import javax.mail.Authenticator;
 import javax.mail.Session;
@@ -28,13 +30,19 @@ import java.util.Map;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class MailUtils {
 
-    private static final MailAccount ACCOUNT = SpringUtils.getBean(MailAccount.class);
+    private static MailAccount ACCOUNT;
 
     /**
      * 获取邮件发送实例
      */
     public static MailAccount getMailAccount() {
-        return ACCOUNT;
+        MailAccount account;
+        try {
+            account = SpringUtils.getBean(MailAccount.class);
+        } catch (NoSuchBeanDefinitionException e) {
+            throw new UtilException("邮箱配置没有开启enable,请在yml配置中mail.enable:true");
+        }
+        return ACCOUNT = account;
     }
 
     /**
@@ -416,6 +424,8 @@ public class MailUtils {
     private static String send(MailAccount mailAccount, boolean useGlobalSession, Collection<String> tos, Collection<String> ccs, Collection<String> bccs, String subject, String content,
                                Map<String, InputStream> imageMap, boolean isHtml, File... files) {
         final Mail mail = Mail.create(mailAccount).setUseGlobalSession(useGlobalSession);
+
+        System.out.println("MailAccount = " + mailAccount);
 
         // 可选抄送人
         if (CollUtil.isNotEmpty(ccs)) {

@@ -14,6 +14,8 @@
         <module>box-start</module>
         <module>btbox-extend</module>
         <module>btbox-extend/btbox-monitor-admin</module>
+        <module>box-demo</module>
+        <module>box-system</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -275,10 +277,24 @@
                 <version>${box-springboot-background-template.version}</version>
             </dependency>
 
-            <!-- 启动模块 -->
+            <!-- 扩展模块 -->
             <dependency>
                 <groupId>com.btbox</groupId>
                 <artifactId>btbox-extend</artifactId>
+                <version>${box-springboot-background-template.version}</version>
+            </dependency>
+
+            <!-- demo模块 -->
+            <dependency>
+                <groupId>com.btbox</groupId>
+                <artifactId>box-demo</artifactId>
+                <version>${box-springboot-background-template.version}</version>
+            </dependency>
+
+            <!-- system模块 -->
+            <dependency>
+                <groupId>com.btbox</groupId>
+                <artifactId>box-system</artifactId>
                 <version>${box-springboot-background-template.version}</version>
             </dependency>
 

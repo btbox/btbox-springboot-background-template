@@ -18,6 +18,16 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.btbox</groupId>
+            <artifactId>box-system</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.btbox</groupId>
+            <artifactId>box-demo</artifactId>
+        </dependency>
+
         <!-- Mysql驱动包 -->
         <dependency>
             <groupId>com.mysql</groupId>
