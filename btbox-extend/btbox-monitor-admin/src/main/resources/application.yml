@@ -18,7 +18,7 @@ spring:
   boot:
     admin:
       ui:
-        title: RuoYi-Vue-Plus服务监控中心
+        title: BT-BOX-后台服务监控中心
       context-path: /admin
 
 --- # Actuator 监控端点的配置项
@@ -31,7 +31,7 @@ management:
     health:
       show-details: ALWAYS
     logfile:
-      external-file: ./logs/ruoyi-monitor-admin.log
+      external-file: ./logs/admin-monitor/monitor-admin.log
 
 --- # 监控配置
 spring.boot.admin.client:
@@ -41,5 +41,5 @@ spring.boot.admin.client:
   url: http://localhost:9090/admin
   instance:
     service-host-type: IP
-  username: ruoyi
+  username: btbox
   password: 123456

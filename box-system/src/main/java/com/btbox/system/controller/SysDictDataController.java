@@ -1,4 +1,4 @@
-package com.btbox.web.controller;
+package com.btbox.system.controller;
 
 
 import cn.hutool.core.util.ObjectUtil;
