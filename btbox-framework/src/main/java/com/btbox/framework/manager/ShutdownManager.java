@@ -1,6 +1,7 @@
 package com.btbox.framework.manager;
 
 
+import com.btbox.common.mdc.MdcThreadPoolTaskExecutor;
 import com.btbox.common.utils.Threads;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ import java.util.concurrent.ScheduledExecutorService;
 public class ShutdownManager {
 
     @Autowired
-    @Qualifier("scheduledExecutorService")
-    private ScheduledExecutorService scheduledExecutorService;
+    @Qualifier("schedulePoolTaskExecutor")
+    private MdcThreadPoolTaskExecutor schedulePoolTaskExecutor;
 
     @PreDestroy
     public void destroy() {
@@ -34,7 +35,7 @@ public class ShutdownManager {
     private void shutdownAsyncManager() {
         try {
             log.info("====关闭后台任务任务线程池====");
-            Threads.shutdownAndAwaitTermination(scheduledExecutorService);
+            schedulePoolTaskExecutor.shutdown();
         } catch (Exception e) {
             log.error(e.getMessage(), e);
         }
