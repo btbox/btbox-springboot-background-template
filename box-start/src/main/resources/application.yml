@@ -34,9 +34,9 @@ spring:
   servlet:
     multipart:
       # 单个文件大小
-      max-file-size: 10MB
+      max-file-size: 1000MB
       # 设置总上传的文件大小
-      max-request-size: 20MB
+      max-request-size: 2000MB
   mvc:
     format:
       date-time: yyyy-MM-dd HH:mm:ss
@@ -96,36 +96,42 @@ mybatis-plus:
       # 字段验证策略之 select,在 select 的时候的字段验证策略既 wrapper 根据内部 entity 生成的 where 条件
       where-strategy: NOT_NULL
 
+
+# springdoc-openapi项目配置
 springdoc:
-  api-docs:
-    # 是否开启接口文档
-    enabled: true
-#  swagger-ui:
-#    # 持久化认证数据
-#    persistAuthorization: true
+  # 基本信息
   info:
-    # 标题
-    title: '标题：${btbox.name}后台管理系统_接口文档'
-    # 描述
-    description: '描述：用于管理集团旗下公司的人员信息,具体包括XXX,XXX模块...'
-    # 版本
-    version: '版本号: ${btbox.version}'
-    # 作者信息
-    contact:
-      name: Lion Li
-      email: crazylionli@163.com
-      url: https://gitee.com/dromara/RuoYi-Vue-Plus
-#  components:
-#    # 鉴权方式配置
-#    security-schemes:
-#      apiKey:
-#        type: APIKEY
-#        in: HEADER
-#        name: ${sa-token.token-name}
-#  #这里定义了两个分组，可定义多个，也可以不定义
+    title: btbox后台模板boot
+    version: 1.0
+    description: btbox后台模板boot
+  # swagger
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+
+  # 分组配置
   group-configs:
-    - group: 1.系统模块
+    - group: : 'default'
+      paths-to-match: '/**'
       packages-to-scan: com.btbox.web
+
+
+
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+  documents:
+    # 注意 group 要对应 springdoc-openapi 的group名字
+    - group: default
+      name: 测试自定义标题分组
+      locations: classpath:markdown/*
 
 # 防止XSS攻击
 xss:
