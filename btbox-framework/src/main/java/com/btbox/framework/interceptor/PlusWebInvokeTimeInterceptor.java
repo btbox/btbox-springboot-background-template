@@ -44,14 +44,14 @@ public class PlusWebInvokeTimeInterceptor implements HandlerInterceptor {
                     BufferedReader reader = request.getReader();
                     jsonParam = IoUtil.read(reader);
                 }
-                log.debug("[PLUS]开始请求 => URL[{}],参数类型[json],参数:[{}]", url, jsonParam);
+                log.debug("[Api]开始请求 => URL[{}],参数类型[json],参数:[{}]", url, jsonParam);
             } else {
                 Map<String, String[]> parameterMap = request.getParameterMap();
                 if (MapUtil.isNotEmpty(parameterMap)) {
                     String parameters = JsonUtils.toJsonString(parameterMap);
-                    log.debug("[PLUS]开始请求 => URL[{}],参数类型[param],参数:[{}]", url, parameters);
+                    log.debug("[Api]开始请求 => URL[{}],参数类型[param],参数:[{}]", url, parameters);
                 } else {
-                    log.debug("[PLUS]开始请求 => URL[{}],无参数", url);
+                    log.debug("[Api]开始请求 => URL[{}],无参数", url);
                 }
             }
 
@@ -72,7 +72,7 @@ public class PlusWebInvokeTimeInterceptor implements HandlerInterceptor {
         if (!prodProfile.equals(SpringUtils.getActiveProfile())) {
             StopWatch stopWatch = invokeTimeTL.get();
             stopWatch.stop();
-            log.debug("[PLUS]结束请求 => URL[{}],耗时:[{}]毫秒", request.getMethod() + " " + request.getRequestURI(), stopWatch.getTime());
+            log.debug("[Api]结束请求 => URL[{}],耗时:[{}]毫秒", request.getMethod() + " " + request.getRequestURI(), stopWatch.getTime());
             invokeTimeTL.remove();
         }
     }
