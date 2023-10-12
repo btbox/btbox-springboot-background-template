@@ -44,8 +44,8 @@ public class TestI18nController {
      * 测试使用 not.null
      */
     @GetMapping("/test1")
-    public R<Void> test1(@NotBlank(message = "{not.null}") String str) {
-        return R.ok(str);
+    public R<String> test1(@NotBlank(message = "{not.null}") String str) {
+        return R.ok(MessageUtils.message("user.jcaptcha.expire"), str);
     }
 
     /**
