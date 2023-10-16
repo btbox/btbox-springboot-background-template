@@ -146,6 +146,13 @@
             <artifactId>ip2region</artifactId>
         </dependency>
 
+        <!--文件上传框架-->
+        <!--https://spring-file-storage.xuyanwu.cn/-->
+        <dependency>
+            <groupId>cn.xuyanwu</groupId>
+            <artifactId>spring-file-storage</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

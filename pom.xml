@@ -55,6 +55,8 @@
         <sms4j.version>3.0.1</sms4j.version>
 
         <knife4j.version>4.3.0</knife4j.version>
+        <!-- 文件上传框架 -->
+        <spring-file-storage.version>1.0.3</spring-file-storage.version>
     </properties>
 
     <profiles>
@@ -250,6 +252,14 @@
                 <groupId>org.bouncycastle</groupId>
                 <artifactId>bcprov-jdk15to18</artifactId>
                 <version>${bouncycastle.version}</version>
+            </dependency>
+
+            <!--文件上传框架-->
+            <!--https://spring-file-storage.xuyanwu.cn/-->
+            <dependency>
+                <groupId>cn.xuyanwu</groupId>
+                <artifactId>spring-file-storage</artifactId>
+                <version>${spring-file-storage.version}</version>
             </dependency>
 
             <!-- 通用模块 -->
