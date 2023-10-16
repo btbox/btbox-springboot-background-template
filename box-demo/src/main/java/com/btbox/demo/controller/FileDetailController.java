@@ -23,10 +23,6 @@ public class FileDetailController {
     @PostMapping("/upload")
     public FileInfo upload(MultipartFile file) {
         return fileStorageService.of(file)
-                .setPath("upload/") // 保存到相对路径下，为了方便管理，不需要可以不写
-                .setObjectId("0")   // 关联对象id，为了方便管理，不需要可以不写
-                .setObjectType("0") // 关联对象类型，为了方便管理，不需要可以不写
-                .putAttr("role","admin") // 保存一些属性，可以在切面、保存上传记录、自定义存储平台等地方获取使用，不需要可以不写
                 .upload();
     }
     
@@ -91,6 +87,6 @@ public class FileDetailController {
         FileInfo fileInfo = fileStorageService.getFileInfoByUrl(url);
         fileStorageService.download(fileInfo).setProgressMonitor((progressSize,allSize) ->
                 System.out.println("已下载 " + progressSize + " 总大小" + allSize)
-        ).file("D:\\Temp\\a.jpg");
+        ).file("D:\\Temp\\2.png");
     }
 }
