@@ -1,7 +1,8 @@
-package com.btbox.demo.mapper;
+package com.btbox.common.mapper;
+
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.btbox.demo.domain.entity.FileDetail;
+import com.btbox.common.core.domain.entity.FileDetail;
 
 public interface FileDetailMapper extends BaseMapper<FileDetail> {
 }

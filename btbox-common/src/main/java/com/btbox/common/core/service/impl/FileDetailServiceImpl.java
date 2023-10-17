@@ -1,4 +1,4 @@
-package com.btbox.demo.service.impl;
+package com.btbox.common.core.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.lang.Dict;
@@ -6,10 +6,9 @@ import cn.hutool.core.util.StrUtil;
 import cn.xuyanwu.spring.file.storage.FileInfo;
 import cn.xuyanwu.spring.file.storage.recorder.FileRecorder;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.btbox.demo.domain.entity.FileDetail;
-import com.btbox.demo.mapper.FileDetailMapper;
+import com.btbox.common.core.domain.entity.FileDetail;
+import com.btbox.common.mapper.FileDetailMapper;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
@@ -18,7 +17,7 @@ import org.springframework.stereotype.Service;
  * 用来将文件上传记录保存到数据库，这里使用了 MyBatis-Plus 和 Hutool 工具类
  */
 @Service
-public class FileDetailService extends ServiceImpl<FileDetailMapper, FileDetail> implements FileRecorder {
+public class FileDetailServiceImpl extends ServiceImpl<FileDetailMapper, FileDetail> implements FileRecorder {
 
     /**
      * 保存文件信息到数据库
@@ -26,7 +25,7 @@ public class FileDetailService extends ServiceImpl<FileDetailMapper, FileDetail>
     @SneakyThrows
     @Override
     public boolean save(FileInfo info) {
-        FileDetail detail = BeanUtil.copyProperties(info,FileDetail.class,"attr");
+        FileDetail detail = BeanUtil.copyProperties(info, FileDetail.class,"attr");
 
         //这是手动获 取附加属性字典 并转成 json 字符串，方便存储在数据库中
         if (info.getAttr() != null) {
