@@ -10,6 +10,15 @@ spring.boot.admin.client:
 
 --- # 数据源配置
 spring:
+# 如果不使用其他关系型数据库的话，请使用h2或者其他的嵌入式数据库，否则文件下载或者数据字典等无法使用
+#  h2:
+#    console:
+#      # 开启web控制台
+#      enabled: true
+#      # 访问路径url+/h2
+#      path: /h2
+#      settings:
+#        web-allow-others: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     # 动态数据源文档 https://www.kancloud.cn/tracy5546/dynamic-datasource/content
@@ -57,6 +66,15 @@ spring:
 #          driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
 #          url: jdbc:sqlserver://localhost:1433;DatabaseName=tempdb;SelectMethod=cursor;encrypt=false;rewriteBatchedStatements=true
 #          username: SA
+#          password: root
+#        h2:
+#          type: ${spring.datasource.type}
+#          driverClassName: org.h2.Driver
+#          # MODE=MYSQL; 是MYSQL的模式也就是模拟其他数据库系统的行为和语法
+#          # CASE_INSENSITIVE_IDENTIFIERS=TRUE;不进行区分大小写配置，可以看数据库需要选择配置
+#          # AUTO_SERVER=TRUE 自动服务器模式，它将允许多个进程同时连接到同一个数据库，而不需要手动启动服务器进程。自动服务器模式会在第一个连接请求到达时自动启动服务器，然后处理后续的连接请求。
+#          url: jdbc:h2:./db/btbox-boot;MODE=MYSQL;AUTO_SERVER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;
+#          username: root
 #          password: root
       hikari:
         # 最大连接池数量
