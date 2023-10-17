@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.btbox</groupId>
     <artifactId>btbox-springboot-background-template</artifactId>
-    <version>0.1.0</version>
+    <version>${box-springboot-background-template.version}</version>
     <name>box-springboot-background-template</name>
     <description>btbox-springboot-后台管理模板</description>
-    <url></url>
+    <url>https://github.com/btbox/btbox-springboot-background-template</url>
     <modules>
         <module>btbox-common</module>
         <module>btbox-framework</module>
@@ -21,7 +21,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <box-springboot-background-template.version>0.1.0</box-springboot-background-template.version>
+        <box-springboot-background-template.version>1.0.0</box-springboot-background-template.version>
         <spring-boot.version>2.7.16</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
