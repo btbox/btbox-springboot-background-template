@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.btbox</groupId>
     <artifactId>btbox-springboot-background-template</artifactId>
-    <version>${box-springboot-background-template.version}</version>
+    <version>1.0.0</version>
     <name>box-springboot-background-template</name>
     <description>btbox-springboot-后台管理模板</description>
     <url>https://github.com/btbox/btbox-springboot-background-template</url>
@@ -20,9 +20,9 @@
     <packaging>pom</packaging>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <box-springboot-background-template.version>1.0.0</box-springboot-background-template.version>
-        <spring-boot.version>2.7.16</spring-boot.version>
+        <spring-boot.version>3.1.4</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
@@ -34,9 +34,10 @@
         <p6spy.version>3.9.1</p6spy.version>
         <hutool.version>5.8.22</hutool.version>
         <okhttp.version>4.10.0</okhttp.version>
-        <spring-boot-admin.version>2.7.11</spring-boot-admin.version>
+        <!--admin需要跟springboot版本一致-->
+        <spring-boot-admin.version>3.1.4</spring-boot-admin.version>
         <redisson.version>3.20.1</redisson.version>
-        <lock4j.version>2.2.3</lock4j.version>
+        <lock4j.version>2.2.5</lock4j.version>
         <dynamic-ds.version>3.5.2</dynamic-ds.version>
         <alibaba-ttl.version>2.14.2</alibaba-ttl.version>
         <lombok.version>1.18.30</lombok.version>
@@ -112,7 +113,7 @@
 
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
-                <artifactId>knife4j-openapi3-spring-boot-starter</artifactId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
                 <version>${knife4j.version}</version>
             </dependency>
 
@@ -310,11 +311,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.9.0</version>
+                <version>3.11.0</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                    <compilerArgs>
+                        <!--去掉启动的时候报错o.s.c.LocalVariableTableParameterNameDiscoverer
+ - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection-->
+                        <arg>-parameters</arg>
+                    </compilerArgs>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>com.github.therapi</groupId>

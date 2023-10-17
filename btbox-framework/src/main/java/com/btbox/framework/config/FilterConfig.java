@@ -5,13 +5,14 @@ import com.btbox.common.filter.RepeatableFilter;
 import com.btbox.common.filter.XssFilter;
 import com.btbox.common.utils.StringUtils;
 import com.btbox.framework.config.properties.XssProperties;
+import jakarta.servlet.DispatcherType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.servlet.DispatcherType;
+
 import java.util.HashMap;
 import java.util.Map;
 

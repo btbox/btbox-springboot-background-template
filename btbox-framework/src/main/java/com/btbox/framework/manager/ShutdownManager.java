@@ -2,14 +2,12 @@ package com.btbox.framework.manager;
 
 
 import com.btbox.common.mdc.MdcThreadPoolTaskExecutor;
-import com.btbox.common.utils.Threads;
+
+import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PreDestroy;
-import java.util.concurrent.ScheduledExecutorService;
 
 /**
  * 确保应用退出时能关闭后台线程

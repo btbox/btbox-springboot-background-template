@@ -12,6 +12,8 @@ import com.btbox.common.utils.JsonUtils;
 import com.btbox.common.utils.ServletUtils;
 import com.btbox.common.utils.StringUtils;
 import com.btbox.common.utils.spring.SpringUtils;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -22,8 +24,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 import java.util.Collection;
 import java.util.Map;
 import java.util.StringJoiner;

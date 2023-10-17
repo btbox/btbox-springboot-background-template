@@ -7,12 +7,13 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.btbox.common.annotation.ExcelDictFormat;
 import com.btbox.common.convert.ExcelDictConvert;
 import com.btbox.common.core.domain.BaseEntity;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+
 
 /**
  * 字典类型表 sys_dict_type

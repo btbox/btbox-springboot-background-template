@@ -5,14 +5,11 @@ import com.btbox.common.translation.TranslationInterface;
 import com.btbox.common.translation.handler.TranslationBeanSerializerModifier;
 import com.btbox.common.translation.handler.TranslationHandler;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.PostConstruct;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 翻译模块配置类
