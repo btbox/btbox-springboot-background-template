@@ -10,15 +10,15 @@ spring.boot.admin.client:
 
 --- # 数据源配置
 spring:
-# 如果不使用其他关系型数据库的话，请使用h2或者其他的嵌入式数据库，否则文件下载或者数据字典等无法使用
-#  h2:
-#    console:
-#      # 开启web控制台
-#      enabled: true
-#      # 访问路径url+/h2
-#      path: /h2
-#      settings:
-#        web-allow-others: true
+  # 如果不使用其他关系型数据库的话，请使用h2或者其他的嵌入式数据库，否则文件下载或者数据字典等无法使用
+  h2:
+    console:
+      # 开启web控制台
+      enabled: true
+      # 访问路径url+/h2
+      path: /h2
+      settings:
+        web-allow-others: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     # 动态数据源文档 https://www.kancloud.cn/tracy5546/dynamic-datasource/content
@@ -33,49 +33,50 @@ spring:
         # 主库数据源
         master:
           type: ${spring.datasource.type}
-          driverClassName: com.mysql.cj.jdbc.Driver
-          # jdbc 所有参数配置参考 https://lionli.blog.csdn.net/article/details/122018562
-          # rewriteBatchedStatements=true 批处理优化 大幅提升批量插入更新删除性能(对数据库有性能损耗 使用批量操作应考虑性能问题)
-          url: jdbc:mysql://10.1.1.68:3306/btbox-boot?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&autoReconnect=true&rewriteBatchedStatements=true
+          driverClassName: org.h2.Driver
+          # MODE=MYSQL; 是MYSQL的模式也就是模拟其他数据库系统的行为和语法
+          # CASE_INSENSITIVE_IDENTIFIERS=TRUE;不进行区分大小写配置，可以看数据库需要选择配置
+          # AUTO_SERVER=TRUE 自动服务器模式，它将允许多个进程同时连接到同一个数据库，而不需要手动启动服务器进程。自动服务器模式会在第一个连接请求到达时自动启动服务器，然后处理后续的连接请求。
+          url: jdbc:h2:./db/btbox-boot;MODE=MYSQL;AUTO_SERVER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;
           username: root
           password: root
         # 从库数据源
-#        slave:
-#          lazy: true
-#          type: ${spring.datasource.type}
-#          driverClassName: com.mysql.cj.jdbc.Driver
-#          url: jdbc:mysql://localhost:3306/ry-vue?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&autoReconnect=true&rewriteBatchedStatements=true
-#          username:
-#          password:
-#        oracle:
-#          type: ${spring.datasource.type}
-#          driverClassName: oracle.jdbc.OracleDriver
-#          url: jdbc:oracle:thin:@//localhost:1521/XE
-#          username: ROOT
-#          password: root
-#          hikari:
-#            connectionTestQuery: SELECT 1 FROM DUAL
-#        postgres:
-#          type: ${spring.datasource.type}
-#          driverClassName: org.postgresql.Driver
-#          url: jdbc:postgresql://localhost:5432/postgres?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
-#          username: root
-#          password: root
-#        sqlserver:
-#          type: ${spring.datasource.type}
-#          driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-#          url: jdbc:sqlserver://localhost:1433;DatabaseName=tempdb;SelectMethod=cursor;encrypt=false;rewriteBatchedStatements=true
-#          username: SA
-#          password: root
-#        h2:
-#          type: ${spring.datasource.type}
-#          driverClassName: org.h2.Driver
-#          # MODE=MYSQL; 是MYSQL的模式也就是模拟其他数据库系统的行为和语法
-#          # CASE_INSENSITIVE_IDENTIFIERS=TRUE;不进行区分大小写配置，可以看数据库需要选择配置
-#          # AUTO_SERVER=TRUE 自动服务器模式，它将允许多个进程同时连接到同一个数据库，而不需要手动启动服务器进程。自动服务器模式会在第一个连接请求到达时自动启动服务器，然后处理后续的连接请求。
-#          url: jdbc:h2:./db/btbox-boot;MODE=MYSQL;AUTO_SERVER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;
-#          username: root
-#          password: root
+      #        slave:
+      #          lazy: true
+      #          type: ${spring.datasource.type}
+      #          driverClassName: com.mysql.cj.jdbc.Driver
+      #          url: jdbc:mysql://localhost:3306/ry-vue?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&autoReconnect=true&rewriteBatchedStatements=true
+      #          username:
+      #          password:
+      #        oracle:
+      #          type: ${spring.datasource.type}
+      #          driverClassName: oracle.jdbc.OracleDriver
+      #          url: jdbc:oracle:thin:@//localhost:1521/XE
+      #          username: ROOT
+      #          password: root
+      #          hikari:
+      #            connectionTestQuery: SELECT 1 FROM DUAL
+      #        postgres:
+      #          type: ${spring.datasource.type}
+      #          driverClassName: org.postgresql.Driver
+      #          url: jdbc:postgresql://localhost:5432/postgres?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
+      #          username: root
+      #          password: root
+      #        sqlserver:
+      #          type: ${spring.datasource.type}
+      #          driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      #          url: jdbc:sqlserver://localhost:1433;DatabaseName=tempdb;SelectMethod=cursor;encrypt=false;rewriteBatchedStatements=true
+      #          username: SA
+      #          password: root
+      #        h2:
+      #          type: ${spring.datasource.type}
+      #          driverClassName: org.h2.Driver
+      #          # MODE=MYSQL; 是MYSQL的模式也就是模拟其他数据库系统的行为和语法
+      #          # CASE_INSENSITIVE_IDENTIFIERS=TRUE;不进行区分大小写配置，可以看数据库需要选择配置
+      #          # AUTO_SERVER=TRUE 自动服务器模式，它将允许多个进程同时连接到同一个数据库，而不需要手动启动服务器进程。自动服务器模式会在第一个连接请求到达时自动启动服务器，然后处理后续的连接请求。
+      #          url: jdbc:h2:./db/btbox-boot;MODE=MYSQL;AUTO_SERVER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;
+      #          username: root
+      #          password: root
       hikari:
         # 最大连接池数量
         maxPoolSize: 20
@@ -188,3 +189,21 @@ sms:
       template-id: xxxxxxxx
       #您的sdkAppId
       sdk-app-id: 您的sdkAppId
+
+forest:
+  backend: okhttp3             # 后端HTTP框架（默认为 okhttp3）
+  max-connections: 1000        # 连接池最大连接数（默认为 500）
+  max-route-connections: 500   # 每个路由的最大连接数（默认为 500）
+  max-request-queue-size: 100  # [自v1.5.22版本起可用] 最大请求等待队列大小
+  max-async-thread-size: 300   # [自v1.5.21版本起可用] 最大异步线程数
+  max-async-queue-size: 16     # [自v1.5.22版本起可用] 最大异步线程池队列大小
+  timeout: 3000                # [已不推荐使用] 请求超时时间，单位为毫秒（默认为 3000）
+  connect-timeout: 3000        # 连接超时时间，单位为毫秒（默认为 timeout）
+  read-timeout: 3000           # 数据读取超时时间，单位为毫秒（默认为 timeout）
+  max-retry-count: 0           # 请求失败后重试次数（默认为 0 次不重试）
+  ssl-protocol: TLS            # 单向验证的HTTPS的默认TLS协议（默认为 TLS）
+  log-enabled: true            # 打开或关闭日志（默认为 true）
+  log-request: true            # 打开/关闭Forest请求日志（默认为 true）
+  log-response-status: true    # 打开/关闭Forest响应状态日志（默认为 true）
+  log-response-content: true   # 打开/关闭Forest响应内容日志（默认为 false）
+  async-mode: platform         # [自v1.5.27版本起可用] 异步模式（默认为 platform）
