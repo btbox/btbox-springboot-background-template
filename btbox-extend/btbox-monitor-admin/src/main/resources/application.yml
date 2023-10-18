@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: btbox-monitor-admin
-  profiles:
-    active: @profiles.active@
 
 logging:
   config: classpath:logback-plus.xml

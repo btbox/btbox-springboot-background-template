@@ -32,7 +32,6 @@ public class SecurityConfig {
                 .and().authorizeRequests()
                 .antMatchers(adminContextPath + "/assets/**"
                     , adminContextPath + "/login"
-                    , "/actuator"
                     , "/actuator/**"
                 ).permitAll()
                 .anyRequest().authenticated()
