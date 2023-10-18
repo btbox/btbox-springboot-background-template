@@ -38,7 +38,7 @@
         <spring-boot-admin.version>3.1.4</spring-boot-admin.version>
         <redisson.version>3.20.1</redisson.version>
         <lock4j.version>2.2.5</lock4j.version>
-        <dynamic-ds.version>3.5.2</dynamic-ds.version>
+        <dynamic-ds.version>4.1.3</dynamic-ds.version>
         <alibaba-ttl.version>2.14.2</alibaba-ttl.version>
         <lombok.version>1.18.30</lombok.version>
         <bouncycastle.version>1.72</bouncycastle.version>
@@ -155,7 +155,7 @@
             <!-- dynamic-datasource 多数据源-->
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <artifactId>dynamic-datasource-spring-boot3-starter</artifactId>
                 <version>${dynamic-ds.version}</version>
             </dependency>
 
