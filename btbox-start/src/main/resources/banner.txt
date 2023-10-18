@@ -1,4 +1,4 @@
-Application Version: ${box-springboot-background-template.version}
+Application Version: ${btbox-springboot-background-template.version}
 Spring Boot Version: ${spring-boot.version}
 _______________________________ ________  ____  ___        __________ ________   ___________________
 \______   \__    ___/\______   \\_____  \ \   \/  /        \______   \\_____  \  \_____  \__    ___/

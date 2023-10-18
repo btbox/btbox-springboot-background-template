@@ -3,7 +3,7 @@ btbox:
   # 名称
   name: btbox-boot
   # 版本
-  version: ${box-springboot-background-template.version}
+  version: ${btbox-springboot-background-template.version}
 
 # 开发环境配置
 server:

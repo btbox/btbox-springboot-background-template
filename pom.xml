@@ -5,7 +5,7 @@
     <groupId>com.btbox</groupId>
     <artifactId>btbox-springboot-background-template</artifactId>
     <version>1.0.0</version>
-    <name>box-springboot-background-template</name>
+    <name>btbox-springboot-background-template</name>
     <description>btbox-springboot-后台管理模板</description>
     <url>https://github.com/btbox/btbox-springboot-background-template</url>
     <modules>
@@ -21,7 +21,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <box-springboot-background-template.version>1.0.0</box-springboot-background-template.version>
+        <btbox-springboot-background-template.version>1.0.0</btbox-springboot-background-template.version>
         <spring-boot.version>3.1.4</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -265,42 +265,42 @@
             <dependency>
                 <groupId>com.btbox</groupId>
                 <artifactId>btbox-common</artifactId>
-                <version>${box-springboot-background-template.version}</version>
+                <version>${btbox-springboot-background-template.version}</version>
             </dependency>
 
             <!-- 核心模块 -->
             <dependency>
                 <groupId>com.btbox</groupId>
                 <artifactId>btbox-framework</artifactId>
-                <version>${box-springboot-background-template.version}</version>
+                <version>${btbox-springboot-background-template.version}</version>
             </dependency>
 
             <!-- 启动模块 -->
             <dependency>
                 <groupId>com.btbox</groupId>
                 <artifactId>btbox-start</artifactId>
-                <version>${box-springboot-background-template.version}</version>
+                <version>${btbox-springboot-background-template.version}</version>
             </dependency>
 
             <!-- 扩展模块 -->
             <dependency>
                 <groupId>com.btbox</groupId>
                 <artifactId>btbox-extend</artifactId>
-                <version>${box-springboot-background-template.version}</version>
+                <version>${btbox-springboot-background-template.version}</version>
             </dependency>
 
             <!-- demo模块 -->
             <dependency>
                 <groupId>com.btbox</groupId>
                 <artifactId>btbox-demo</artifactId>
-                <version>${box-springboot-background-template.version}</version>
+                <version>${btbox-springboot-background-template.version}</version>
             </dependency>
 
             <!-- system模块 -->
             <dependency>
                 <groupId>com.btbox</groupId>
                 <artifactId>btbox-system</artifactId>
-                <version>${box-springboot-background-template.version}</version>
+                <version>${btbox-springboot-background-template.version}</version>
             </dependency>
 
         </dependencies>
