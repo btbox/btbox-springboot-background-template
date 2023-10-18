@@ -1,6 +1,7 @@
 package com.btbox;
 
 import cn.xuyanwu.spring.file.storage.spring.EnableFileStorage;
+import com.dtflys.forest.springboot.annotation.ForestScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
@@ -10,7 +11,6 @@ import org.springframework.boot.context.metrics.buffering.BufferingApplicationSt
  *
  * @author ruoyi
  */
-
 @EnableFileStorage
 @SpringBootApplication
 public class BtBoxBootApplication {

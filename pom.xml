@@ -56,6 +56,8 @@
         <knife4j.version>4.3.0</knife4j.version>
         <!-- 文件上传框架 -->
         <spring-file-storage.version>1.0.3</spring-file-storage.version>
+        <!-- HTTP 客户端框架 -->
+        <forest.version>1.5.33</forest.version>
     </properties>
 
     <profiles>
@@ -253,12 +255,20 @@
                 <version>${bouncycastle.version}</version>
             </dependency>
 
-            <!--文件上传框架-->
+            <!-- 文件上传框架 -->
             <!--https://spring-file-storage.xuyanwu.cn/-->
             <dependency>
                 <groupId>cn.xuyanwu</groupId>
                 <artifactId>spring-file-storage</artifactId>
                 <version>${spring-file-storage.version}</version>
+            </dependency>
+
+            <!-- HTTP 客户端框架 -->
+            <!--https://forest.dtflyx.com/-->
+            <dependency>
+                <groupId>com.dtflys.forest</groupId>
+                <artifactId>forest-spring-boot3-starter</artifactId>
+                <version>${forest.version}</version>
             </dependency>
 
             <!-- 通用模块 -->

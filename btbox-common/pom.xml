@@ -154,10 +154,17 @@
             <artifactId>spring-file-storage</artifactId>
         </dependency>
 
+        <!-- h2数据库 -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
+        </dependency>
+
+        <!-- HTTP 客户端框架 -->
+        <dependency>
+            <groupId>com.dtflys.forest</groupId>
+            <artifactId>forest-spring-boot3-starter</artifactId>
         </dependency>
 
     </dependencies>
