@@ -6,11 +6,9 @@
         <artifactId>btbox-springboot-background-template</artifactId>
         <version>1.0.0</version>
     </parent>
+    <artifactId>btbox-system</artifactId>
+    <name>btbox-system</name>
 
-    <artifactId>box-system</artifactId>
-    <packaging>jar</packaging>
-
-    <name>box-system</name>
     <description>
         system系统模块
     </description>

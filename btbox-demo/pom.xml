@@ -7,8 +7,8 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>box-demo</artifactId>
-    <name>box-demo</name>
+    <artifactId>btbox-demo</artifactId>
+    <name>btbox-demo</name>
     <description>
         demo模块
     </description>
