@@ -7,10 +7,10 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>box-start</artifactId>
+    <artifactId>btbox-start</artifactId>
     <packaging>jar</packaging>
 
-    <name>box-start</name>
+    <name>btbox-start</name>
 
     <description>
         web服务入口
@@ -20,12 +20,12 @@
 
         <dependency>
             <groupId>com.btbox</groupId>
-            <artifactId>box-system</artifactId>
+            <artifactId>btbox-system</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.btbox</groupId>
-            <artifactId>box-demo</artifactId>
+            <artifactId>btbox-demo</artifactId>
         </dependency>
 
         <!-- Mysql驱动包 -->

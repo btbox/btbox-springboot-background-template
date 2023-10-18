@@ -11,11 +11,11 @@
     <modules>
         <module>btbox-common</module>
         <module>btbox-framework</module>
-        <module>box-start</module>
+        <module>btbox-start</module>
         <module>btbox-extend</module>
         <module>btbox-extend/btbox-monitor-admin</module>
-        <module>box-demo</module>
-        <module>box-system</module>
+        <module>btbox-demo</module>
+        <module>btbox-system</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -291,14 +291,14 @@
             <!-- demo模块 -->
             <dependency>
                 <groupId>com.btbox</groupId>
-                <artifactId>box-demo</artifactId>
+                <artifactId>btbox-demo</artifactId>
                 <version>${box-springboot-background-template.version}</version>
             </dependency>
 
             <!-- system模块 -->
             <dependency>
                 <groupId>com.btbox</groupId>
-                <artifactId>box-system</artifactId>
+                <artifactId>btbox-system</artifactId>
                 <version>${box-springboot-background-template.version}</version>
             </dependency>
 
