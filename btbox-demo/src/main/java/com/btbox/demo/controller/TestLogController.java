@@ -5,6 +5,7 @@ import com.btbox.common.enums.BusinessType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @Validated
+@RequestMapping("/demo/log")
 public class TestLogController {
 
     /**
@@ -26,9 +28,9 @@ public class TestLogController {
      * @createDate: 2023/10/10 16:24
      * @return: void
      */
-    @GetMapping("t1")
+    @GetMapping("save")
     @Log(title = "测试日志保存", businessType = BusinessType.INSERT)
-    public void t1(String name) {
+    public void save(String name) {
         System.out.println("name = " + name);
     }
 
